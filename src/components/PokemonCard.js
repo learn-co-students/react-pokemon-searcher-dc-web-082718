@@ -22,7 +22,8 @@ class PokemonCard extends React.PureComponent {
       <Card onClick={this.handleClick} >
         <div>
           <div className="image">
-            <img src={this.props.pokemon.sprites.front}alt="oh no!" />
+            {!this.state.flipped ? <img src={this.props.pokemon.sprites.front} alt="oh no!" /> : <img src={this.props.pokemon.sprites.back} alt="oh no!" />}
+
           </div>
           <div className="content">
             <div className="header">{this.props.pokemon.name}</div>
